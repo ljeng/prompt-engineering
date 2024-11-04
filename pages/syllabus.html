@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="  - Harvard University, Institute for Applied Computational Science. "
+    />
+    <meta name="author" content="" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:300,400,700"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../style/tipuesearch/tipuesearch.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../style/images/favicon.ico"
+    />
+    <link rel="stylesheet" href="../style/css/iacs.css" />
+
+    <title>Harvard 2021-CS205 | Syllabus</title>
+
+    <style>
+      .navbar {
+        background-color: #A41034
+      }
+    </style>
+  </head>
+  <body>
+<nav class="navbar navbar-dark navbar-expand-md">
+  <div class="container">
+    <a class="navbar-brand" href="..">
+      <img
+        class="navbar-brand-logo"
+        src="../style/images/logo.png"
+      />
+      <h3 class="course-title">2021-CS205</h3>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarsDefault"
+      aria-controls="navbarsDefault"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/syllabus.html">Syllabus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/schedule.html">Schedule</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/coursework.html">Course Flow</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/resources.html">Resources</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/materials.html">Materials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/project.html">Project</a>
+        </li>
+        <form
+          class="form-inline my-2"
+          action="../search.html"
+          onsubmit="return validateForm(this.elements['q'].value);"
+        >
+          <div class="input-group input-group-sm">
+            <input
+              class="form-control"
+              type="text"
+              name="q"
+              placeholder="Search Topic"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-default" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </ul>
+    </div>
+    <!-- .collapse navbar-collapse -->
+  </div>
+  <!-- .container -->
+</nav>
+    <main id="content" class="container">
+  <h1>Syllabus</h1>
+  <br />
+  <hr />
+  <h3>Time and Location</h3>
+<p><strong>Lectures:</strong> Tuesday 1:30PM-2:45PM; Thursday 1:30PM-2:45PM</p>
+<p><strong>Location:</strong> Zoom meeting room accessible through Canvas</p>
+<p><br></p>
+<p><strong>Labs:</strong> TBD</p>
+<p><strong>Location:</strong> Zoom section room accessible through Canvas</p>
+<h3>Staff</h3>
+<p><b>Lead Instructor: David Sondak</b></p>
+<h3>Teaching Fellows:</h3>
+<ul>
+<li>Hayoun Oh</li>
+<li>Tosin Alliyu</li>
+<li>Simon Warchol</li>
+<li>Dovran Amanov</li>
+<li>Haipeng Lin</li>
+<li>George Touloumes</li>
+</ul>
+<p><br></p>
+<p><strong>New Policies for Recording Classroom Sessions Conducted via Zoom</strong></p>
+<p>These following policies are taken from <a href="https://harvard.service-now.com/ithelp?id=kb_article&amp;sys_id=6880408bdbab8c9430ed1dca489619bc">Rules and Best Practices for the Recording of Classroom Sessions Conducted via Zoom
+- IT Help</a>. The main points
+are summarized below.</p>
+<ol>
+<li>Students are <b>not</b> permitted to record class sessions, including by using Zoom.
+Links to class session recordings will only be posted in the Zoom link of the Canvas course webpage.</li>
+<li>Students <b>must not</b> disclose any Zoom recording URL - or any copies of the recording the student might create or
+obtain - to anyone outside the class.</li>
+</ol>
+<p><br></p>
+<h2>About the Course</h2>
+<h4>Learning Outcomes</h4>
+<p>After completing this course you should be able to:</p>
+<ul>
+<li>Recognize and recall programming models, platforms, open-source tools and computing architectures that are relevant to 
+  computational and data science</li>
+<li>Assessment of computational approaches and their practical applications to scientific problems</li>
+<li>Fundamentals of parallel computing including abstract thinking and algorithmic development</li>
+<li>Identify which parallel strategy is appropriate to solve a given problem</li>
+<li>Design efficient parallel solutions to scientific problems</li>
+<li>Implement parallel programs in prominent programming models and evaluate their performance using various metrics</li>
+<li>Use a collection of open source software and state-of-the-art HPC platforms for data analysis, modelling, and visualization 
+  of real scientific problems</li>
+</ul>
+<h4>Prerequisites</h4>
+<p>Students are expected to have basic programming experience, familiarity with Python and C, basic knowledge of Linux including
+using the command line, and basic understanding of algorithms (CS107/AC207 or CS50).</p>
+<h4>Intended Audience</h4>
+<p>The course is aimed at students with a background in a scientific discipline who will not typically have a traditional
+Computer Science background, though basic programming knowledge is assumed as a prerequisite. We hope to attract students
+from the life sciences, physical sciences, economics, social sciences, medicine, and the humanities interested in developing
+applications for large-scale computational or data processing.</p>
+<p>This course is also for computer science, engineering, and undergraduate students that need to make decisions about the
+architecture of a system, choose tools for solving a given problem and figure out how best to apply them, or better
+understand the strengths and weaknesses of existing systems and tools.</p>
+<h4>Required Textbook</h4>
+<p>None.</p>
+<h4>Suggsted Textbooks</h4>
+<p>You may find the following texts helpful to supplement the content covered in the course. None of the homework problems or
+course content will be taken directly from any of these books. You should use them as supplementary material.</p>
+<ul>
+<li>Introduction to High Performance Computing for Scientists and Engineers; Georg Hager; CRC Press; July 2010</li>
+<li>Introduction to parallel computing; Ananth Grama, Anshul Gupta, George Karypis, Vipin Kumar; Pearson, January 2003</li>
+<li>Programming Massively Parallel Processors: A Hands-on Approach; David B. Kirk and Wen-mei W. Hwu; Morgan Kaufmann; February 2010</li>
+<li>The Art of Multiprocessor Programming; Maurice Herlihy, Nir Shavit; Morgan Kaufmann; June 2012</li>
+<li>Designing Data-Intensive Applications. The Big Ideas Behind Reliable, Scalable, and Maintainable Systems; Martin Kleppmann; O'Reilly Media, March 2017</li>
+<li>MapReduce Design Patterns: Building Effective Algorithms and Analytics for Hadoop; Adam Shook and Donald Miner; O'Reilly Media, December 2012</li>
+<li>Data Analysis in the Cloud, Models, Techniques and Applications; Domenico Talia, Paolo Trunfio, Fabrizio Marozzo, September 2015</li>
+<li>Cloud Computing for Science and Engineering; Ian Foster, Dennis Gannon; The MIT Press Cambridge, 2017</li>
+</ul>
+<p><br></p>
+<h2>Course Format</h2>
+<p>The course is designed to study and discuss the principles (<b>reading assignments and lectures</b>), to develop practical
+skills (<b>hands-on sessions, programming assignments and infrastructure guides</b>), to expose students to real-world life
+experiences (<b>case studies and guest lectures</b>), and to apply the concepts to solve a real-life problem
+(<b>project</b>).</p>
+<h4>Reading Assignments</h4>
+<p>Some lectures include a required reading to ensure that you are prepared for the activities in class. <b>You are expected to
+complete the required reading and answer the associated questions.</b> The questions will be posted on Piazza. Post your
+comments under the Piazza note announcing the publication of the reading assignment using the “Follow-up discussion” feature.
+Examples of good comments:</p>
+<ul>
+<li>Clarification of some point or detail in the readings</li>
+<li>Critiques of arguments made in the readings</li>
+<li>Analysis of implications or future directions for work discussed</li>
+<li>Questions about the readings or answers to other people's questions</li>
+<li>Links to web resources or examples that pertain to a reading</li>
+</ul>
+<p>Typically you should set aside 1-2 hours to complete each reading assignment. Even though we do not expect you to fully
+understand everything before coming to class, you will often have to read some passages several times to build your
+understanding. The goal of the reading assignments is to prepare for class, to familiarize yourself with new terminology and
+definitions, and to determine which part of the subject needs more attention.</p>
+<h4>Lecture Sessions</h4>
+<p><b>Lecture attendance is strongly encouraged.</b> You should treat the lecture as you would in a normal, in-person semester.
+However, lecture attendance is not strictly mandatory to accommodate a variety of time zones. <b>If you are in a time zone
+in which you are able to attend lecture, then you should do so.</b> If your time zone precludes you from attending lecture,
+then you may watch the recorded lecture, which can be access via Canvas.</p>
+<p>Lectures are organized under themes and include explanation of theoretical concepts to build a conceptual framework, and
+simple examples and case studies to illustrate the theory. They may also include discussion of reading assignments to develop
+problem-solving strategies and critical thinking. <b>Please arrive on time.</b> Lectures will be accompanied by concept
+quizzes to assess your understanding of the material and to help us identify gaps.</p>
+<h4>Hands-on Sessions</h4>
+<p><b>Hands-on session attendance should be treated in the same manner as lecture attendance.</b> Hands-on sessions provide an
+opportunity to learn and practice the main programming models, which will be used in the programming assignments (homework)
+and the final project. Students should prepare the execution framework needed to do the exercises according to the
+guidelines provided by the instructors <em>before</em> coming to the session. The course includes hands-on exercises on AWS cloud
+and Harvard’s Cannon supercomputer.</p>
+<h4>Lab Sessions</h4>
+<p>Lab attendance is <b>mandatory</b>. These sessions count toward synchronous learning sessions and allow you to interact with
+members of the teaching staff. Lab sessions are used to allow students to become familiar with the computing and data
+processing infrastructure on AWS by following the infrastructure guides and to provide help with the homework (programming
+assignments) and the final project.</p>
+<p>Please refer to the main page for the specific lab times. You may attend any lab session that you wish and as many sessions
+as you like in a given week. You may also change which lab you attend each week. There are no deliverables for the lab
+sessions. Your lab grade will be based on attendance. </p>
+<h4>Guest Lectures</h4>
+<p>Guest lectures are given by experts with proven expertise in the course topics to expose students to real-world life
+experiences about the application of the models and platforms covered in the course.</p>
+<h4>Quizzes</h4>
+<p><b>Quizzes</b> will be released on Canvas by the end of the lecture sessions and the material will be based on what was
+discussed in the class. Each quiz will be <b> available for 24 hours </b> from the end of the corresponding lecture and you
+will have 5 minutes to take the quiz. There will be <b>no retakes or makeup quizzes for any reason.</b> Your lowest score on
+all quizzes will be dropped.</p>
+<h4>Homework</h4>
+<p>Lectures are complemented by homeworks to bridge theory and practice. Homework will mostly consist of basic programming
+assignments to exercise a technology or programming model. Homework assignments will be posted on the website on Mondays and
+will be due on a subsequent Monday (listed in the course schedule).</p>
+<p>There are <b>no late days.</b> Please contact me directly in the event of an emergency.</p>
+<h4>Infrastructure Guides</h4>
+<p>Infrastructure guides help with the deployment of parallel computing and big data processing frameworks on the AWS cloud for
+developing, testing and evaluating the programming assignments and the final project.</p>
+<h4>Project</h4>
+<p><b>A major component of the course is a final programming project.</b> Your final project is to solve a compute or data
+intensive scientific problem using the platforms, tools and systems introduced in the course. You will collect the data,
+implement the tool, and analyze the performance of an end to end application. You are required to form teams and to partition
+the work among the team members. The final project has six milestones:
+1. Team formation
+2. Rough draft of project proposal
+3. An in-class presentation of your project proposal
+4. An in-class presentation of your progress with the design of the project
+5. Submission of project deliverables
+6. Submission and final presentation to teaching staff.</p>
+<p>Further details about the project will be updated under the Projects page.</p>
+<h4>Exams</h4>
+<p>We will not have standard midterm or final exams. Instead, we will have in-class quizzes, two in-class presentations on
+project proposal and progress, and a final project presentation during the scheduled final exam period.</p>
+<h4>Piazza</h4>
+<p>We'll be using Piazza for online class discussions. We will also use Piazza for all course announcements. Piazza is your main
+venue to ask questions, discuss problems, and help each other out. It should always be your first recourse for seeking
+answers to your questions about the course, lecture or reading material, or the assignments. <b>Participation on Piazza will
+factor into your participation grade for the course.</b></p>
+<h4>Office Hours</h4>
+<p>The instructors and the teaching fellows hold weekly office hours. Office hour times and locations are listed on the class
+homepage. Office hours provide you with an opportunity to review and discuss course materials as well as provide further
+guidance for your homework in a more intimate environment, with only your teaching fellow and maybe a handful of classmates
+present.</p>
+<p><br></p>
+<h2>Grading</h2>
+<h4>Relative Weighting</h4>
+<p>You will be graded on homework assignments, a final project, in-class quizzes, and participation. There will be no exams. The
+final grade will be composed as follows:</p>
+<ul>
+<li><b>Homework (40% - 400 points):</b> Individual submission of assignments.</li>
+<li><b>Final Project (40% - 400 points):</b> A project of your own design to be worked on in small teams.</li>
+<li><b>Quizzes (10% - 100 points):</b> Assessments of your understanding of the material.</li>
+<li><b>Participation (10% - 100 points):</b> Piazza posts, reading assignments, lab attendance.</li>
+</ul>
+<h4>Homework Grading</h4>
+<p>Homework will be graded based on 1) how correct your code is (the code should compile and run, we are not troubleshooting
+code), and 2) how you have interpreted the results in a report. Your work will be evaluated holistically beyond mechanical
+correctness and focus on the overall quality of the work.</p>
+<h4>Homework Regrading</h4>
+<p>It is very important to us that all assignments are properly graded. If you believe there is an error in your assignment
+grading, please submit <b>an explanation via email to us within 7 days</b> of receiving the grade. No regrade requests will
+be accepted orally and no regrade requests will be accepted more than 7 days after you receive the grade for the assignment.
+Also, note that requesting a regrade applies to the entire assignment.</p>
+<h4>Late Days</h4>
+<p><b>No homework assignments or project milestones will be accepted for credit after the deadline.</b> If you have a verifiable
+medical condition or other special circumstances that interfere with your coursework please let us know as soon as possible.</p>
+<p><br></p>
+<h2>Policies</h2>
+<h4>Contingency Plan</h4>
+<p>In the event of a prolonged Zoom outage, the course lecture will be recorded offline and posted to Canvas as soon as
+possible. </p>
+<h4>Accessibility</h4>
+<p>Any student receiving accommodations through the Accessible Education Office should present their AEO letter as soon as
+possible. Failure to do so may prevent us from making appropriate arrangements.</p>
+<h4>Devices in Class</h4>
+<p>We will use laptops throughout the term to facilitate activities and project work in-class. However, research and student
+feedback clearly shows that using devices on non-class related activities not only harms your own learning, but other
+students’ learning as well. Therefore, <b>we only allow device usage during activities that require devices.</b> At all other
+times, you should not be using your device. We may help you remember this by announcing when to bring devices out and when to
+put them away. This will be hard to enforce in a Zoom class, but we ask for your cooperation in this matter.</p>
+<!--
+#### Lecture Attendance
+
+Lecture, hands-on session and guest lecture attendance is <b>mandatory and quality of participation will factor into the
+participation grade.</b> You must send an email to the staff at least a day before a lecture to be excused. Attendance to
+labs is optional but <b>strongly encouraged.</b>
+-->
+
+<h4>Participation</h4>
+<p>Helping each other out and discussing the reading assignments and lectures is a key aspect of this course. All students are
+expected to contribute online on Piazza and during lectures. Participation on Piazza will contribute to the final grade.</p>
+<h4>Collaboration</h4>
+<p>You are welcome to discuss the course's material and homework with others in order to better understand it, but the work you
+turn in must be your own (with some exceptions, e.g., the final project, where work is explicitly shared). You are encouraged
+to discuss programming assignments with classmates, but should be open about such cooperation, and should attribute anyone
+you collaborated with in your homework.</p>
+<p>There is a balance to be struck between submitting your own work (to demonstrate you're learning the material) and
+discussion/collaboration with others (to enhance learning through mutual assistance). In general, avoid sharing actual code
+(particularly code you hand in), but feel free to discuss, diagram, use pseudocode, and even share small amounts of code
+("snippets"). If you are in doubt as to the appropriateness of some level of collaboration with other students, contact the
+course instructor.</p>
+<p>The class staff will be using codeanalysis tools to compare students work; plagiarism will not be tolerated, and students may
+be asked to work more independently if their work is too similar. You may not submit the same or similar work to this course
+that you have submitted or will submit to another, without permission. You must acknowledge any source code that was not
+written by you by mentioning the original author(s) directly in your source code (comment or header), or in a README.txt file
+accompanying your submission. Do not remove any original copyright notices and headers. All forms of academic dishonesty will
+be forwarded to the Harvard College. For more information please consult the Harvard academic integrity guidelines: <a href="https://handbook.fas.harvard.edu/book/academic-integrity#two">Academic
+Integrity and Academic Dishonesty</a>. </p>
+<p><br></p>
+<h2>Credits</h2>
+<p>The lecture material is adapted from the books and online research resources relevant to the course topics. Please contact us
+if you find materials where the credit is missing or that you would rather have removed.</p>
+<h2>Diversity and Inclusion Statement</h2>
+<p>Computer science, like many fields of science, has historically only been represented by a small portion of the population.
+This is despite some of the pioneers in computer science being from groups that are historically and presently
+underrepresented. Whenever possible, I will try to highlight the contributions that people have been from a variety of
+backgrounds. To start, here is a list of some really nice references.:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Ada_Lovelace">Ada Lovelace</a> </li>
+<li><a href="https://en.wikipedia.org/wiki/Grace_Hopper">Grace Hopper</a> </li>
+<li><a href="https://blog.newrelic.com/culture/black-history-month-computer-science-infographic/">7 Black Pioneers in Computer Science</a></li>
+</ul>
+<p>I welcome any additions to this list you may have!</p>
+<p>In an ongoing effort to foster a more inclusive environment in computer science, recent initiatives have attempted to
+overcome some barriers to entry for underrepresented groups:</p>
+<ul>
+<li><a href="https://www.madewithcode.com/">Made w/ Code</a>.</li>
+<li><a href="https://womendrivendev.org/">Women Driven Development</a></li>
+<li><a href="https://bongohive.co.zm/">BongoHive</a></li>
+</ul>
+<p>Like the first list above, this list is not enhaustive, but I welcome any additions and suggestions you may have.</p>
+<p>I would like to attempt to discuss diversity in computer science from time to time where appropriate and possible.</p>
+<p>Please contact me (in person or electronically) or submit anonymous feedback if you have any suggestions to improve the
+quality of the course materials.  The best way to provide anonymous feedback is to use Piazza, which allows you to provide
+comments anonymously.</p>
+<p>Furthermore, I would like to create a learning environment for my students that supports a diversity of thoughts,
+perspectives and experiences, and honors your identities (including race, gender, class, sexuality, religion, ability, etc.)
+To help accomplish this:</p>
+<ul>
+<li>If you have a name and/or set of pronouns that differ from those that appear in your official Harvard records, please let me know!</li>
+<li>If you feel like your performance in the class is being impacted by your experiences outside of class, please don’t
+  hesitate to come and talk with me. I want to be a resource for you. Remember that you can also submit anonymous feedback
+(which will lead to me making a general announcement to the class if necessary to address your concerns). If you prefer to
+speak with someone outside of the course, you may find helpful resources at the
+<a href="https://diversity.college.harvard.edu/">Harvard Office of Diversity and Inclusion</a>.</li>
+<li>I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said
+  in class (by anyone) that made you feel uncomfortable, please talk to me about it. (Again, anonymous feedback is always an
+option.)</li>
+<li>As a participant in course discussions, you should also strive to honor the diversity of your classmates.</li>
+</ul>
+    </main>
+
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted">Copyright 2018 &copy;
+      <a class="text-muted" href="https://iacs.seas.harvard.edu/">Institute for Applied Computational Science</a>
+    </span>
+  </div>
+</footer>     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

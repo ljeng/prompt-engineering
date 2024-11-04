@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="  - Harvard University, Institute for Applied Computational Science. "
+    />
+    <meta name="author" content="" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:300,400,700"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../style/tipuesearch/tipuesearch.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../style/images/favicon.ico"
+    />
+    <link rel="stylesheet" href="../style/css/iacs.css" />
+
+    <title>Harvard 2021-CS205 | Project</title>
+
+    <style>
+      .navbar {
+        background-color: #A41034
+      }
+    </style>
+  </head>
+  <body>
+<nav class="navbar navbar-dark navbar-expand-md">
+  <div class="container">
+    <a class="navbar-brand" href="..">
+      <img
+        class="navbar-brand-logo"
+        src="../style/images/logo.png"
+      />
+      <h3 class="course-title">2021-CS205</h3>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarsDefault"
+      aria-controls="navbarsDefault"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/syllabus.html">Syllabus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/schedule.html">Schedule</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/coursework.html">Course Flow</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/resources.html">Resources</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/materials.html">Materials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/project.html">Project</a>
+        </li>
+        <form
+          class="form-inline my-2"
+          action="../search.html"
+          onsubmit="return validateForm(this.elements['q'].value);"
+        >
+          <div class="input-group input-group-sm">
+            <input
+              class="form-control"
+              type="text"
+              name="q"
+              placeholder="Search Topic"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-default" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </ul>
+    </div>
+    <!-- .collapse navbar-collapse -->
+  </div>
+  <!-- .container -->
+</nav>
+    <main id="content" class="container">
+  <h1>Project</h1>
+  <br />
+  <hr />
+  <p>Extreme scale data science at the convergence of big data and massively parallel computing is enabling simulation, modelling and real-time analysis of complex natural and social phenomena at unprecedented scales. The aim of the project is to gain practical experience into this interplay by applying parallel computation principles in solving a compute and data-intensive problem.</p>
+<p>Your final project is to solve a data-intensive or a compute-intensive problem with parallel processing on the AWS cloud or on Harvard’s supercomputer: Cannon (or both!). You will identify a compute or and data science problem, analyse its compute scaling requirement, collect the data, design and implement a parallel software, and demonstrate scaled performance of an end-to-end application.</p>
+<h2>Rules</h2>
+<h3>Project Requirements</h3>
+<p>Your project should consider the following aspects:</p>
+<ul>
+<li>Demonstrate the need for big compute and/or big data processing, and what can be achieved thanks to large-scale parallel processing.</li>
+<li>Solve a problem for a non-trivial computation graph and with hierarchical parallelism.</li>
+<li>Be implemented on a distributed-memory architecture with either a many-core or a multi-core compute node, and evaluated on at least 8 compute nodes (note: each compute node on Cannon is a multi-core with 32, or 64 cores or with a many-core GPU with hundreds of cores).</li>
+<li>Use a hybrid parallel program in either, for example: MPI + OpenMP, MPI + OpenACC (or OpenCL), Spark or MapReduce + OpenACC (or OpenCL) or MPI + Spark or MapReduce.</li>
+<li>Be evaluated on large data sets or problem sizes to demonstrate both weak and strong scaling using appropriate metrics (throughput, efficiency, iso-efficiency...).</li>
+</ul>
+<p>Note that your project is not required to include all of these aspects.  However, projects that do include more of the listed
+aspects or a higher level of difficulty will be weighted accordingly.</p>
+<h3>Group Size</h3>
+<p>Students are required to form teams and to partition the work among the team members. The final project must be done in teams
+with 3-4 students each (exceptions by permission of the instructor). You can use the course forum to find prospective team members. You may also find and discuss project ideas on the forum. In general, we do not anticipate that the grades for each group member will be different. However, we reserve the right to assign different grades to each group member if it becomes apparent that one of them put in a vastly different amount of effort than the others.</p>
+<h3>Project Milestones</h3>
+<p>There are five milestones for your final project. It is critical to note that no extensions will be given for any of these milestones for any reason. Projects submitted after the final due date will not be graded.</p>
+<ul>
+<li>Team Formation (2/22)</li>
+<li>High-Level Project Description (3/15) </li>
+<li>In-class presentation of your project proposal (4/6 and 4/8)</li>
+<li>In-class presentation of your progress with the design of the project (4/20 and 4/22)</li>
+<li>The final project deliverables submission and project presentation (5/10 @ 9AM EST)</li>
+</ul>
+<h3>Project Proposal</h3>
+<p>Your group needs to present a project proposal (and submit the PDF of the presentation) with the following sections:</p>
+<ul>
+<li>What is the problem you are trying to solve with this application?</li>
+<li>What is the need for big compute and/or big data processing and what can be achieved thanks to large-scale parallel processing?</li>
+<li>Describe your model and/or data in detail: where does it come from, what does it mean, etc.</li>
+<li>Which tools and infrastructures you are planning to use to build the application?</li>
+</ul>
+<p>You will have 5, and ONLY 5, minutes to briefly summarize your proposal. You have to prepare 2-3 slides for your proposal. We will enforce the 5-minute time limit.</p>
+<ul>
+<li>The presentation of the project proposal is worth 10% of the project.</li>
+<li>This presentation is a chance for you to get feedback. We may suggest modifications if necessary. Our main concern is the amount of effort a given project will require; either too much or too little is unacceptable.</li>
+</ul>
+<h3>Project Progress (Design)</h3>
+<p>Your group needs to present a project progress (and submit the PDF of the presentation) covering the main aspects in the design of the parallel application with the following sections:</p>
+<ul>
+<li>Define the type of your application, the levels of parallelism exploited, the types of parallelism within the application, and the parallel execution model that will be used to build the parallel application</li>
+<li>Specify programming model and infrastructure that you will use, and If code exists, provide an analysis/profiling of the existing sequential/parallel code (you should check the limits of your account for scalability testing).</li>
+<li>Describe the main overheads (communication, synchronization, load balancing and sequential sections) in the parallelization and techniques that will be applied to mitigate them</li>
+<li>Describe the numerical complexity of the algorithm</li>
+<li>Estimate the theoretical speed-up and scalability expected</li>
+</ul>
+<p>You will have 5, and ONLY 5, minutes to briefly summarize your proposal. You have to prepare 2-3 slides for your progress. We will enforce the 5-minute time limit.</p>
+<ul>
+<li>The presentation of the project design is worth 20% of the project. While it will likely take less than 20% of the time you spend on the project, you should take it very seriously.</li>
+<li>We will grade your designs thoroughly. The design is essentially the most important part of the project. Having a good project design is needed to ensure an efficient implementation and can significantly cut your total coding and integration time.</li>
+<li>This presentation is not a proposal but a design document, you should be concrete and specific rather than abstract and general, and include real performance estimates.</li>
+<li>This presentation is also a chance for you to get feedback from the teaching staff, and to come up with ways around roadblocks you encounter. It is also a chance for the teaching staff to ensure that your project is on track, and that your project is still in the appropriate-amount-of-work range.</li>
+</ul>
+<h3>Project Deliverables</h3>
+<ul>
+<li>Web site as final report</li>
+<li>Software with evaluation data sets, test cases (on Github repo)</li>
+<li>Presentation to the teaching staff</li>
+</ul>
+<h3>Project Web Site</h3>
+<p>An important piece of your final project is a public web site that describes all the great work you did for your project. The web site serves as the final project report, and needs to describe your complete project. You can use GitHub Pages, or the README file on the GitHub repository, so you can easily refer to the software at the GitHub repository. You should assume the reader has no prior knowledge of your project and has not read your proposal. It should address the following aspects:</p>
+<ul>
+<li>Description of problem and the need for HPC and/or Big Data</li>
+<li>Description of solution and comparison with existing work on the problem</li>
+<li>Description of your model and/or data in detail: where did it come from, how did you acquire it, what does it mean, etc.</li>
+<li>Technical description of the parallel application, programming models, platform and infrastructure</li>
+<li>Links to repository with source code, evaluation data sets and test cases</li>
+<li>Technical description of the software design, code baseline, dependencies, how to use the code, and system and environment needed to reproduce your tests</li>
+<li>Performance evaluation (speed-up, throughput, weak and strong scaling) and discussion about overheads and optimizations done</li>
+<li>Description of advanced features like models/platforms not explained in class, advanced functions of modules, techniques to mitigate overheads, challenging parallelization or implementation aspects...</li>
+<li>Final discussion about goals achieved, improvements suggested, lessons learnt, future work, interesting insights…</li>
+<li>Citations</li>
+</ul>
+<p>Your web page should include screenshots of your software that demonstrate how it functions. You should include a link to your source code.</p>
+<h3>Project Software</h3>
+<p>Your final project can be implemented using any API or programming language you would like. Make your own repository on GitHub with a link to your project web page. Software with evaluation data sets, test cases should be available on the repo. Include a README that describes the code and application files, and how your program should be run. We will be grading these projects on a variety of platforms, so you must include detailed instructions on how to run or compile your code. If we cannot run your application from the instructions included with your submission, we will not be able to grade this portion of your project. Your performance results should be reproducible, so you should provide all the information of the system and the environment needed to reproduce your tests.</p>
+<h3>Project Presentations</h3>
+<p>You will be given a maximum of 12 minutes to briefly present your project followed by 3 minutes of discussion time. Please prepare a suitable number of slides. We will enforce a 12 min time limit. You presentation should be a minimum of 10
+minutes. Focus the majority of your presentation on your main contributions rather than on technical details. What do you feel is the coolest part of your project? What insights did you gain? What is the single most important thing you would like to show the class? Upload the presentation to the GitHub repo and on Canvas.</p>
+<h3>Project Grading</h3>
+<p>The final project grades are dependent on the following criteria:</p>
+<ul>
+<li>Attempted difficulty: Some projects are harder than others. For example, an assignment based off of one of the homework assignments is probably easier than a completely new application.</li>
+<li>Did you meet your major goals? The most important grading criteria is functionality: A working program will always garner the majority of available points; no credit will be given for non-working programs. A modest solution that works will be graded much more favorably than an ambitious "solution" that core dumps!</li>
+</ul>
+<p>Project will be graded on the depth of work undertaken and communication (web site, presentation):</p>
+<ul>
+<li>10%: Project proposal (in-class presentation)</li>
+<li>20%: Project design (in-class presentation)</li>
+<li>10%: Problem description and comparison with existing work</li>
+<li>20%; Parallel application, programming model, platform and infrastructure</li>
+<li>10%: Software source code, design and documentation</li>
+<li>20%: Performance evaluation and discussion</li>
+<li>10%: Final discussion and deliverables quality</li>
+</ul>
+<p>Extra points may be earned for the use of advanced features like:</p>
+<ul>
+<li>Programming models not explained in class (CUDA for GPU programming...)</li>
+<li>Infrastructures not used during the course (Google Compute, eXede supercomputers...)</li>
+<li>Advanced functions of models explained in class (MPI I/O, complex collective communications in MPI, OpenMP NUMA extensions...)</li>
+<li>Modules of platforms not explained in class (ML or Graph in Spark...)</li>
+<li>Advanced techniques to mitigate overheads (overlap of communication and computation, optimized libraries...)</li>
+<li>Customized system configurations (kernel/driver tuning...) to mitigate overheads</li>
+<li>Challenging parallelization or implementation aspects</li>
+</ul>
+<h2>Examples from Previous Years</h2>
+<ul>
+<li><a href="projects2020.html">Final Project List 2019 (spring 2020)</a></li>
+<li><a href="https://github.com/harvard-cs-205/CS205-Spring2019-Projects">Final Project List 2018 (spring 2019)</a></li>
+<li><a href="https://github.com/harvard-cs-205/CS205-Spring2018-Projects">Final Project List 2017 (spring 2018)</a></li>
+</ul>
+    </main>
+
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted">Copyright 2018 &copy;
+      <a class="text-muted" href="https://iacs.seas.harvard.edu/">Institute for Applied Computational Science</a>
+    </span>
+  </div>
+</footer>     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

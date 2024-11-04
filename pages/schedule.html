@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="  - Harvard University, Institute for Applied Computational Science. "
+    />
+    <meta name="author" content="" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:300,400,700"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../style/tipuesearch/tipuesearch.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../style/images/favicon.ico"
+    />
+    <link rel="stylesheet" href="../style/css/iacs.css" />
+
+    <title>Harvard 2021-CS205 | Schedule</title>
+
+    <style>
+      .navbar {
+        background-color: #A41034
+      }
+    </style>
+  </head>
+  <body>
+<nav class="navbar navbar-dark navbar-expand-md">
+  <div class="container">
+    <a class="navbar-brand" href="..">
+      <img
+        class="navbar-brand-logo"
+        src="../style/images/logo.png"
+      />
+      <h3 class="course-title">2021-CS205</h3>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarsDefault"
+      aria-controls="navbarsDefault"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/syllabus.html">Syllabus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/schedule.html">Schedule</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/coursework.html">Course Flow</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/resources.html">Resources</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/materials.html">Materials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/project.html">Project</a>
+        </li>
+        <form
+          class="form-inline my-2"
+          action="../search.html"
+          onsubmit="return validateForm(this.elements['q'].value);"
+        >
+          <div class="input-group input-group-sm">
+            <input
+              class="form-control"
+              type="text"
+              name="q"
+              placeholder="Search Topic"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-default" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </ul>
+    </div>
+    <!-- .collapse navbar-collapse -->
+  </div>
+  <!-- .container -->
+</nav>
+    <main id="content" class="container">
+  <h1>Schedule</h1>
+  <br />
+  <hr />
+  <table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Date</th>
+<th>Monday Due Dates</th>
+<th>Tuesday Lecture</th>
+<th>Thursday Lecture</th>
+<th>Lab</th>
+<th>Homework</th>
+<th>Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Jan25-29</td>
+<td></td>
+<td><a href="../lectures/A0/">Introduction</a></td>
+<td><a href="../lectures/A1/">A1: Parallel Processing Architectures (Quiz)</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Feb1-5</td>
+<td>HWA Released</td>
+<td><a href="../lectures/A2/">A2: Large Scale Processing on the Cloud (Quiz/Reading)</a></td>
+<td><a href="../lectures/A3/">A3: Large Scale Processing on the Cloud (Quiz/Reading)</a></td>
+<td><a href="../labs/I1/">I1: AWS</a></td>
+<td><a href="../homeworks/HWA/">HWA</a></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Feb8-12</td>
+<td></td>
+<td><a href="../lectures/A4/">A4: Application Parallelism (Quiz)</a></td>
+<td><a href="../lectures/A5/">A5: Designing Parallel Programs (Quiz/Reading)</a></td>
+<td><a href="../labs/I7_1/">I7_1: MPI (Part 1 MPI local)</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Feb15-19</td>
+<td>HWA Due</td>
+<td><a href="../lectures/B1/">B1: Foundations of Parallel Computing (Quiz/Reading)</a></td>
+<td><a href="../lectures/H1/">H1: Hands-on (NO Quiz)</a></td>
+<td><a href="../labs/I2/">I2: OpenNebula; I3: Docker</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Feb22-26</td>
+<td>HWB Released; Project Team Formation Due</td>
+<td><a href="../lectures/B2/">B2: Performance Optimization (Quiz)</a></td>
+<td><a href="../lectures/B3/">B3: Accelerated Computing (Quiz)</a></td>
+<td><a href="../labs/I4/">I4: Perf. Optimization; I5: OpenACC</a></td>
+<td><a href="../homeworks/HWB/">HWB</a></td>
+<td>Prj: Project team formation</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Mar1-5</td>
+<td></td>
+<td><a href="../lectures/B4/">B4: Shared-Memory Parallel Processing (Quiz)</a></td>
+<td><a href="../lectures/H2/">H2: Hands-on</a></td>
+<td><a href="../labs/I6/">I6: OpenMP</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Mar8-12</td>
+<td></td>
+<td><a href="../lectures/B5/">B5: Distributed-Mempory Parallel Processing (Quiz/Reading)</a></td>
+<td><a href="../lectures/H3/">H3: Hands-on</a></td>
+<td><a href="../labs/I7_2/">I7_2: MPI (Part 2 MPI on AWS)</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Mar15-19</td>
+<td>Project Proposal Due</td>
+<td>NO CLASS WELLNESS DAY</td>
+<td><a href="../lectures/C1/">C1: Batch Data Processing (Quiz/Reading)</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Mar22-26</td>
+<td>HWB Due; HWC Released</td>
+<td><a href="../lectures/H4/">H4: Hands-on</a></td>
+<td><a href="../lectures/C2/">C2: Dataflow Processing (Quiz/Reading)</a></td>
+<td><a href="../labs/I8/">I8: Hadoop</a></td>
+<td><a href="../homeworks/HWC/">HWC</a></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Mar29-Apr2</td>
+<td></td>
+<td><a href="../lectures/H5/">H5: Hands-on</a></td>
+<td><a href="../lectures/C3/">C3: Stream Data Processing (Quiz)</a></td>
+<td><a href="../labs/I9/">I9: Spark local</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Apr5-9</td>
+<td></td>
+<td>Project Proposal Presentation</td>
+<td>Project Proposal Presentation</td>
+<td><a href="../labs/I10/">I10: Spark Cluster</a></td>
+<td></td>
+<td>Prj: In-class proposal presentation</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Apr12-16</td>
+<td></td>
+<td><a href="../lectures/G1/">G1: Graph Parallel Processing</a></td>
+<td>NO CLASS WELLNESS DAY</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Apr19-23</td>
+<td>HWC Due</td>
+<td>Project Design Presentation</td>
+<td>Project Design Presentation</td>
+<td></td>
+<td></td>
+<td>Prj: In-class design presentation</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Apr26-30</td>
+<td></td>
+<td>Wrapup Lecture</td>
+<td>Reading Period Begins</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>May3-7</td>
+<td></td>
+<td></td>
+<td>Examination Period Begins</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>May10-14</td>
+<td>Project Deliverable Due; Project Presentation (9:00 AM)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+    </main>
+
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted">Copyright 2018 &copy;
+      <a class="text-muted" href="https://iacs.seas.harvard.edu/">Institute for Applied Computational Science</a>
+    </span>
+  </div>
+</footer>     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

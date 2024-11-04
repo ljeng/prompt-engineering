@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="  - Harvard University, Institute for Applied Computational Science. G1"
+    />
+    <meta name="author" content="" />
+<meta
+  name="keywords"
+  content=""
+/>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:300,400,700"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../../style/tipuesearch/tipuesearch.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../../style/images/favicon.ico"
+    />
+    <link rel="stylesheet" href="../../style/css/iacs.css" />
+
+    <title>Harvard 2021-CS205 | G1</title>
+
+    <style>
+      .navbar {
+        background-color: #A41034
+      }
+    </style>
+  </head>
+  <body>
+<nav class="navbar navbar-dark navbar-expand-md">
+  <div class="container">
+    <a class="navbar-brand" href="../..">
+      <img
+        class="navbar-brand-logo"
+        src="../../style/images/logo.png"
+      />
+      <h3 class="course-title">2021-CS205</h3>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarsDefault"
+      aria-controls="navbarsDefault"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../../pages/syllabus.html">Syllabus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../pages/schedule.html">Schedule</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../pages/coursework.html">Course Flow</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../pages/resources.html">Resources</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../pages/materials.html">Materials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../pages/project.html">Project</a>
+        </li>
+        <form
+          class="form-inline my-2"
+          action="../../search.html"
+          onsubmit="return validateForm(this.elements['q'].value);"
+        >
+          <div class="input-group input-group-sm">
+            <input
+              class="form-control"
+              type="text"
+              name="q"
+              placeholder="Search Topic"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-default" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </ul>
+    </div>
+    <!-- .collapse navbar-collapse -->
+  </div>
+  <!-- .container -->
+</nav>
+    <main id="content" class="container">
+ <h1>G1</h1>
+ <br />
+<hr />
+ <h2>Lecture Slides</h2>
+<p><a href="../../lectures/G1/presentation/Lecture_G1.pdf">Lecture G1 slides</a></p>
+<h2>In-class Exercises</h2>
+<h3>Set up a graph</h3>
+<p>We will work with a very simple example here just to get things going and to demonstrate some of the graph concepts discussed
+in the lecture.</p>
+<h4>Preliminaries</h4>
+<p>First, import <code>graphframes</code>. You could do <code>from graphframes import *</code>, but this is bad form and should be avoided.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">graphframes</span> <span class="k">as</span> <span class="nn">GF</span>
+</code></pre></div>
+
+
+<p>Now import some useful methods to set up our datastructures.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SQLContext</span>
+<span class="n">sql_context</span> <span class="o">=</span> <span class="n">SQLContext</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>The example is a tiny social network consisting of 7 people. Each person is given an <code>id</code>, a <code>name</code>, and an <code>age</code>. The
+vertices of the graph are the people. The vertex labels are the attributes (<code>id</code>, <code>name</code>, <code>age</code>). The edges indicate how the
+people are connected. The edges consist of a <code>src</code> (the starting vertex), a <code>dst</code> (an ending vertex), and a <code>relationship</code>
+(how the people are connected).</p>
+<h4>Create a dataframe of graph vertices</h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Vertex DataFrame</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">sql_context</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span>
+  <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">34</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">36</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span> <span class="mi">29</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;Esther&quot;</span><span class="p">,</span> <span class="mi">32</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;Fanny&quot;</span><span class="p">,</span> <span class="mi">36</span><span class="p">),</span>
+  <span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;Gabby&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="p">],</span> <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+
+<h4>Create a dataframe of graph edges</h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Edge DataFrame                                                                                                       </span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">sql_context</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span>                                                                                      
+  <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;friend&quot;</span><span class="p">),</span>                                                                                                
+  <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;follow&quot;</span><span class="p">),</span>                                                                                                
+  <span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;follow&quot;</span><span class="p">),</span>                                                                                                
+  <span class="p">(</span><span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;follow&quot;</span><span class="p">),</span>                                                                                                
+  <span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;follow&quot;</span><span class="p">),</span>                                                                                                
+  <span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;friend&quot;</span><span class="p">),</span>                                                                                                
+  <span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;friend&quot;</span><span class="p">),</span>                                                                                                
+  <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;friend&quot;</span><span class="p">)</span>                                                                                                 
+<span class="p">],</span> <span class="p">[</span><span class="s2">&quot;src&quot;</span><span class="p">,</span> <span class="s2">&quot;dst&quot;</span><span class="p">,</span> <span class="s2">&quot;relationship&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+
+<h4>Create a graph from the vertices and the edges</h4>
+<p>Create the graph using <code>graphframes</code> is easy once you have the dataframes set up.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># g = GF.GraphFrame(v,e) </span>
+</code></pre></div>
+
+
+<h4>We can even save the graph</h4>
+<div class="highlight"><pre><span></span><code><span class="n">g</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="s2">&quot;vertices&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="s2">&quot;edges&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>If you want to load the saved graph, simply do the following:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load the vertices and edges.</span>
+<span class="c1"># v = sqlContext.read.parquet(&quot;hdfs://myLocation/vertices&quot;)</span>
+<span class="c1"># e = sqlContext.read.parquet(&quot;hdfs://myLocation/edges&quot;)</span>
+<span class="c1"># Create a graph</span>
+<span class="c1"># g = GF.GraphFrame(v, e)</span>
+</code></pre></div>
+
+
+<p>Note that the above code assumes that you have a SQL context.</p>
+<h3>Exercise</h3>
+<p>Draw by hand the directed multigraph that you just created.</p>
+<h3>Exploring the Graph</h3>
+<h4>Visualize the vertices</h4>
+<div class="highlight"><pre><span></span><code><span class="n">g</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+
+<h4>Visualize the edges</h4>
+<div class="highlight"><pre><span></span><code><span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+
+<h4>See the degree of each vertex based on what's coming in</h4>
+<div class="highlight"><pre><span></span><code><span class="n">vertexInDegrees</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">inDegrees</span>
+<span class="n">vertexInDegrees</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+
+<h4>Now check the vertex degree based on what's going out</h4>
+<div class="highlight"><pre><span></span><code><span class="n">vertexOutDegrees</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">outDegrees</span>
+<span class="n">vertexOutDegrees</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+
+<h4>Group and filter vertices based on specified criteria</h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Minimum age in network</span>
+<span class="n">g</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">groupBy</span><span class="p">()</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Find out who is doing the following and count them</span>
+<span class="n">numFollows</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;relationship = &#39;follow&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are </span><span class="si">{0}</span><span class="s2"> people following other people.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">numFollows</span><span class="p">))</span>
+</code></pre></div>
+
+
+<h4>We can also create subgraphs</h4>
+<p>To create a subgraph from our graph, just filter the edges and vertices according to some criterion. Then you'll have some
+new vertices and edges. You can create a new graph from those vertices and edges. This new graph is a subgraph.</p>
+<h4>Exercise</h4>
+<p>Create a subgraph of the graph that we just created where the vertices are people over 32 and the edges are <code>followers</code>.</p>
+<h3>Introduction to Some Graph Algorithms</h3>
+<p>Several algorithms were mentioned in class. GraphFrames provides support for many algorithms. In this section, we walk
+through a handful of the algorithms.</p>
+<h3>Algorithm 1: Breadth-First Search</h3>
+<h4>First we'll search the graph for users of age less than 32 start with people named Esther.</h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Search from &quot;Esther&quot; for users of age &lt; 32.</span>
+<span class="n">paths</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">bfs</span><span class="p">(</span><span class="s2">&quot;name = &#39;Esther&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;age &lt; 32&quot;</span><span class="p">)</span>
+<span class="n">paths</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+
+<h4>We can also search based on the edge attributes and the maximum path length.</h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Specify edge filters or max path lengths.</span>
+<span class="n">paths</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">bfs</span><span class="p">(</span><span class="s2">&quot;name = &#39;Esther&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;age &lt; 32&quot;</span><span class="p">,</span>\
+  <span class="n">edgeFilter</span><span class="o">=</span><span class="s2">&quot;relationship != &#39;friend&#39;&quot;</span><span class="p">,</span> <span class="n">maxPathLength</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">paths</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+
+<h3>Algorithm 2: Label Propagation</h3>
+<div class="highlight"><pre><span></span><code><span class="n">result</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">labelPropagation</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+
+<h3>Algorithm 3: PageRank</h3>
+<p>Try on your own. See the
+<a href="https://graphframes.github.io/graphframes/docs/_site/api/python/graphframes.html#graphframes.GraphFrame.pageRank">API docs</a>
+for details.</p>
+<!--
+### References
+
+[Supercomputing could solve the world’s problems, and create many more](https://www.weforum.org/agenda/2019/02/supercomputing-could-solve-many-of-the-world-s-problems-and-create-many-more/)
+[The Landscape of Exascale Research: A Data-Driven Literature Analysis](https://dl.acm.org/doi/fullHtml/10.1145/3372390)
+[The ecological impact of high-performance computing in astrophysics](https://www-nature-com.ezp-prod1.hul.harvard.edu/articles/s41550-020-1208-y.pdf?proof=t)
+[Examining the Environmental Impact of Computation and Future of Green Computing](https://www.hpcwire.com/off-the-wire/examining-the-environmental-impact-of-computation-and-future-of-green-computing/)
+-->     </main>
+
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted">Copyright 2018 &copy;
+      <a class="text-muted" href="https://iacs.seas.harvard.edu/">Institute for Applied Computational Science</a>
+    </span>
+  </div>
+</footer>     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
